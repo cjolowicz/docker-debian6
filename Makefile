@@ -1,4 +1,4 @@
-DIRS = debian openssl python
+DIRS = debian openssl curl python
 
 all: build
 
