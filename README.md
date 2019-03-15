@@ -12,4 +12,4 @@ Docker Images for Debian 6 with OpenSSL 1.1.1b
 These Docker images are based on the official images for Debian 6 (squeeze), providing them with:
 
 - access to package repositories via archive.debian.org
-- support for TLS 1.2 via OpenSSL 1.1.1b
+- support for TLS 1.3 via OpenSSL 1.1.1b
