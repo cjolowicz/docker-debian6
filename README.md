@@ -4,7 +4,6 @@
 
 Docker Images for Debian 6 with OpenSSL 1.1.1b
 
-- https://hub.docker.com/r/cjolowicz/debian (based on https://github.com/iuridiniz/debian6-docker)
 - https://hub.docker.com/r/cjolowicz/openssl-debian6
 - https://hub.docker.com/r/cjolowicz/curl-debian6
 - https://hub.docker.com/r/cjolowicz/git-debian6
