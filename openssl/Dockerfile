@@ -29,11 +29,8 @@ RUN set -ex; \
     ./config \
         --prefix=$OPENSSL_DIR \
         --openssldir=$OPENSSL_DIR \
-# Build shared libraries.
         shared \
-# Enable compression.
         zlib \
-# Enable use of the Entropy Gathering Daemon.
         enable-egd \
     ; \
     make -j "$(nproc)"; \
