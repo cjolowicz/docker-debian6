@@ -12,7 +12,6 @@ RUN set -ex; \
         make \
         tk-dev \
         uuid-dev \
-# not sure which of the following we actually need:
         autoconf \
         automake \
         bzip2 \
@@ -33,8 +32,6 @@ RUN set -ex; \
         libgdbm-dev \
         libgeoip-dev \
         libglib2.0-dev \
-# This package is not available from the repository:
-#        libgmp-dev \
         libjpeg-dev \
         libkrb5-dev \
         liblzma-dev \
@@ -48,8 +45,6 @@ RUN set -ex; \
         libreadline-dev \
         libssl-dev \
         libtool \
-# This package is not available from the repository:
-#        libwebp-dev \
         libxml2-dev \
         libxslt-dev \
         libyaml-dev \
