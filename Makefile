@@ -1,4 +1,4 @@
-DIRS = debian openssl curl python git
+DIRS = debian debian-i386 openssl curl python git
 
 all: build
 
