@@ -23,4 +23,10 @@ push:
 login:
 	echo "$(DOCKER_PASSWORD)" | docker login -u $(DOCKER_USERNAME) --password-stdin
 
-.PHONY: all build tag push login
+clean:
+	set -ex; \
+	for dir in $(DIRS) ; do \
+	    $(MAKE) -C $$dir clean ; \
+	done
+
+.PHONY: all build tag push login clean
