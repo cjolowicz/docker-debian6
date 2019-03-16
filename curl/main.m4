@@ -2,7 +2,7 @@
 # Docker Image for curl 7.64.0 on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/openssl-debian6:1.1.1b
+FROM BASE_IMAGE
 
 RUN set -ex; \
     apt-get update; \
@@ -20,8 +20,7 @@ RUN set -ex; \
     tar -xf curl-$CURL_VERSION.tar.gz; \
     rm -f curl-$CURL_VERSION.tar.gz; \
     cd curl-$CURL_VERSION; \
-    LDFLAGS="-Wl,-R/usr/local/lib:$OPENSSL_DIR/lib" \
-        ./configure --with-ssl=$OPENSSL_DIR; \
+    CONFIGURE_COMMAND; \
     make -j "$(nproc)"; \
     make install; \
     cd ..; \
