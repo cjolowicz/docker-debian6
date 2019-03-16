@@ -2,7 +2,7 @@
 # Docker Image for Git 2.21.0 on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/curl-debian6:7.64.0
+FROM BASE_IMAGE
 
 RUN set -ex; \
     apt-get update; \
@@ -20,10 +20,7 @@ RUN set -ex; \
     tar -xf git-$GIT_VERSION.tar.gz; \
     rm -f git-$GIT_VERSION.tar.gz; \
     cd git-$GIT_VERSION; \
-    ./configure \
-        --with-openssl=$OPENSSL_DIR \
-        --with-curl=/usr/local \
-    ; \
+    CONFIGURE_COMMAND; \
     make -j "$(nproc)"; \
     make install; \
     cd .. ; \
