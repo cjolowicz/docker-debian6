@@ -2,7 +2,7 @@
 # Docker Image for OpenSSL 1.1.1b on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/debian:squeeze
+FROM BASE_IMAGE
 
 RUN set -ex; \
     apt-get update; \
@@ -26,13 +26,7 @@ RUN set -ex; \
     tar -xf openssl-$OPENSSL_VERSION.tar.gz; \
     rm -f openssl-$OPENSSL_VERSION.tar.gz; \
     cd openssl-$OPENSSL_VERSION; \
-    ./config \
-        --prefix=$OPENSSL_DIR \
-        --openssldir=$OPENSSL_DIR \
-        shared \
-        zlib \
-        enable-egd \
-    ; \
+    CONFIGURE_COMMAND; \
     make -j "$(nproc)"; \
     make install; \
     cd .. ; \
