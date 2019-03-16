@@ -2,7 +2,7 @@
 # Docker Image for Python 3.6.8 on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/curl-debian6:7.64.0
+FROM BASE_IMAGE
 
 RUN set -ex; \
     apt-get update; \
@@ -74,15 +74,7 @@ RUN set -ex; \
     rm -f Python-$PYTHON_VERSION.tgz; \
     cd Python-$PYTHON_VERSION; \
     patch -p1 < ../use-local-openssl.patch; \
-    ./configure \
-        --enable-loadable-sqlite-extensions \
-        --enable-shared \
-        --with-system-expat \
-        --with-system-ffi \
-        --without-ensurepip \
-        CPPFLAGS="$(pkg-config --cflags openssl) -Wl,-R/usr/local/ssl/lib" \
-        LDFLAGS="$(pkg-config --libs openssl) -Wl,-R/usr/local/ssl/lib" \
-    ; \
+    CONFIGURE_COMMAND; \
     make -j "$(nproc)"; \
     make install; \
     ldconfig; \
