@@ -28,7 +28,7 @@ RUN set -ex; \
     cd openssl-$OPENSSL_VERSION; \
     CONFIGURE_COMMAND; \
     make -j "$(nproc)"; \
-    make install; \
+    make install_sw; \
     cd .. ; \
     rm -rf openssl-$OPENSSL_VERSION; \
     echo $OPENSSL_DIR/lib > /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf; \
