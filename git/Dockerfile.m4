@@ -1,6 +1,11 @@
-define(`BASE_IMAGE', `cjolowicz/curl-debian6:7.64.0')
-define(`CONFIGURE_COMMAND',
-       `./configure \
+define(
+  CONFIGURE_COMMAND,
+  `ifelse(
+    ARCH, `x86_64',
+    `./configure \
         --with-openssl=$OPENSSL_DIR \
-        --with-curl=/usr/local')
-include(`main.m4')
+        --with-curl=/usr/local',
+    ARCH, `i386',
+    `./configure \
+        --with-openssl=$OPENSSL_DIR \
+        --with-curl=/usr/local')')dnl

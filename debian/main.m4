@@ -2,7 +2,7 @@
 # Docker Image for Debian 6 Squeeze
 #
 
-FROM debian/eol:squeeze
+FROM BASE_IMAGE
 
 # allow unauthenticated packages (keys are invalid now)
 # https://askubuntu.com/a/74389/469295

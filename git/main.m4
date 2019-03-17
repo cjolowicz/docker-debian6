@@ -2,7 +2,7 @@
 # Docker Image for Git 2.21.0 on Debian 6 (squeeze)
 #
 
-FROM BASE_IMAGE
+FROM cjolowicz/curl-debian6-ARCH:7.64.0
 
 RUN set -ex; \
     apt-get update; \
