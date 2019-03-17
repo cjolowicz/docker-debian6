@@ -1,10 +1,3 @@
-define(
-  CONFIGURE_COMMAND,
-  `ifelse(
-    ARCH, `x86_64',
-    `LDFLAGS="-Wl,-R/usr/local/lib:$OPENSSL_DIR/lib" ./configure --with-ssl=$OPENSSL_DIR',
-    ARCH, `i386',
-    `LDFLAGS="-Wl,-R/usr/local/lib:$OPENSSL_DIR/lib" ./configure --with-ssl=$OPENSSL_DIR --host=i686-pc-linux-gnu CFLAGS=-m32')')dnl
 #
 # Docker Image for curl 7.64.0 on Debian 6 (squeeze)
 #
@@ -27,7 +20,10 @@ RUN set -ex; \
     tar -xf curl-$CURL_VERSION.tar.gz; \
     rm -f curl-$CURL_VERSION.tar.gz; \
     cd curl-$CURL_VERSION; \
-    CONFIGURE_COMMAND; \
+    LDFLAGS="-Wl,-R/usr/local/lib:$OPENSSL_DIR/lib" \
+    ./configure \
+        --with-ssl=$OPENSSL_DIR \
+        ifelse(ARCH, `i386', `--host=i686-pc-linux-gnu CFLAGS=-m32'); \
     make -j "$(nproc)"; \
     make install; \
     cd ..; \

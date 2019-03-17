@@ -1,14 +1,3 @@
-define(
-  CONFIGURE_COMMAND,
-  `ifelse(
-    ARCH, `x86_64',
-    `./configure \
-        --with-openssl=$OPENSSL_DIR \
-        --with-curl=/usr/local',
-    ARCH, `i386',
-    `./configure \
-        --with-openssl=$OPENSSL_DIR \
-        --with-curl=/usr/local')')dnl
 #
 # Docker Image for Git 2.21.0 on Debian 6 (squeeze)
 #
@@ -31,7 +20,9 @@ RUN set -ex; \
     tar -xf git-$GIT_VERSION.tar.gz; \
     rm -f git-$GIT_VERSION.tar.gz; \
     cd git-$GIT_VERSION; \
-    CONFIGURE_COMMAND; \
+    ./configure \
+        --with-openssl=$OPENSSL_DIR \
+        --with-curl=/usr/local; \
     make -j "$(nproc)"; \
     make install; \
     cd .. ; \

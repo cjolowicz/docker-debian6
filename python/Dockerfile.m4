@@ -1,12 +1,3 @@
-define(`CONFIGURE_COMMAND',
-       `./configure \
-        --enable-loadable-sqlite-extensions \
-        --enable-shared \
-        --with-system-expat \
-        --with-system-ffi \
-        --without-ensurepip \
-        CPPFLAGS="$(pkg-config --cflags openssl) -Wl,-R/usr/local/ssl/lib" \
-        LDFLAGS="$(pkg-config --libs openssl) -Wl,-R/usr/local/ssl/lib"')
 #
 # Docker Image for Python 3.6.8 on Debian 6 (squeeze)
 #
@@ -83,7 +74,14 @@ RUN set -ex; \
     rm -f Python-$PYTHON_VERSION.tgz; \
     cd Python-$PYTHON_VERSION; \
     patch -p1 < ../use-local-openssl.patch; \
-    CONFIGURE_COMMAND; \
+    ./configure \
+        --enable-loadable-sqlite-extensions \
+        --enable-shared \
+        --with-system-expat \
+        --with-system-ffi \
+        --without-ensurepip \
+        CPPFLAGS="$(pkg-config --cflags openssl) -Wl,-R/usr/local/ssl/lib" \
+        LDFLAGS="$(pkg-config --libs openssl) -Wl,-R/usr/local/ssl/lib"; \
     make -j "$(nproc)"; \
     make install; \
     ldconfig; \

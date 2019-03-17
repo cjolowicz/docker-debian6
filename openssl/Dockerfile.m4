@@ -1,10 +1,3 @@
-define(
-  CONFIGURE_COMMAND,
-  `ifelse(
-    ARCH, `x86_64',
-    `./config --prefix=$OPENSSL_DIR --openssldir=$OPENSSL_DIR shared zlib enable-egd',
-    ARCH, `i386',
-    `./Configure --prefix=$OPENSSL_DIR --openssldir=$OPENSSL_DIR shared zlib enable-egd -m32 linux-generic32')')dnl
 #
 # Docker Image for OpenSSL 1.1.1b on Debian 6 (squeeze)
 #
@@ -33,7 +26,16 @@ RUN set -ex; \
     tar -xf openssl-$OPENSSL_VERSION.tar.gz; \
     rm -f openssl-$OPENSSL_VERSION.tar.gz; \
     cd openssl-$OPENSSL_VERSION; \
-    CONFIGURE_COMMAND; \
+    ifelse(
+        ARCH, `x86_64',
+        `./config',
+        ARCH, `i386',
+        `./Configure -m32 linux-generic32') \
+        --prefix=$OPENSSL_DIR \
+        --openssldir=$OPENSSL_DIR \
+        shared \
+        zlib \
+        enable-egd ; \
     make -j "$(nproc)"; \
     make install_sw; \
     cd .. ; \
