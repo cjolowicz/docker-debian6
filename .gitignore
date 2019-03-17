@@ -1,5 +1,0 @@
-openssl/Dockerfile
-openssl-i386/Dockerfile
-curl/Dockerfile
-curl-i386/Dockerfile
-git-i386/Dockerfile
