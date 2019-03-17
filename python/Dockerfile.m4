@@ -7,58 +7,16 @@ FROM cjolowicz/curl-debian6-ARCH:7.64.0
 RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
-        libffi-dev \
-        libsqlite3-dev \
-        make \
-        tk-dev \
-        uuid-dev \
-        autoconf \
-        automake \
-        bzip2 \
-        bzr \
-        ca-certificates \
-        dirmngr \
-        dpkg-dev \
-        file \
-        g++ \
-        git \
-        gnupg \
-        imagemagick \
         libbz2-dev \
-        libc6-dev \
-        libcurl4-openssl-dev \
         libdb-dev \
-        libevent-dev \
+        libexpat1-dev \
         libgdbm-dev \
-        libgeoip-dev \
-        libglib2.0-dev \
-        libjpeg-dev \
-        libkrb5-dev \
         liblzma-dev \
-        libmagickcore-dev \
-        libmagickwand-dev \
-        libmysqlclient-dev \
         libncurses5-dev \
         libncursesw5-dev \
-        libpng-dev \
-        libpq-dev \
         libreadline-dev \
-        libssl-dev \
-        libtool \
-        libxml2-dev \
-        libxslt-dev \
-        libyaml-dev \
-        mercurial \
-        netbase \
-        openssh-client \
-        patch \
-        pkg-config \
-        procps \
-        subversion \
-        unzip \
-        wget \
-        xz-utils \
-        zlib1g-dev \
+        libsqlite3-dev \
+        tk-dev \
     ; \
     rm -rf /var/lib/apt/lists/*
 
