@@ -26,7 +26,7 @@ RUN set -ex; \
     tar -xf openssl-$OPENSSL_VERSION.tar.gz; \
     rm -f openssl-$OPENSSL_VERSION.tar.gz; \
     cd openssl-$OPENSSL_VERSION; \
-    ifelse(
+    m4_ifelse(
         ARCH, `x86_64',
         `./config',
         ARCH, `i386',

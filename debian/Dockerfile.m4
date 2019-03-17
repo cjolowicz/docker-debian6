@@ -2,7 +2,7 @@
 # Docker Image for Debian 6 Squeeze
 #
 
-FROM ifelse(
+FROM m4_ifelse(
     ARCH, `x86_64',
     `debian/eol:squeeze',
     ARCH, `i386',

@@ -1,7 +1,7 @@
 all: build
 
 build: Dockerfile.m4 *.m4
-	m4 -D ARCH=$(ARCH) Dockerfile.m4 | docker build -f - -t $(IMAGE) .
+	m4 -P -D ARCH=$(ARCH) Dockerfile.m4 | docker build -f - -t $(IMAGE) .
 
 tag: build
 	set -ex ; \

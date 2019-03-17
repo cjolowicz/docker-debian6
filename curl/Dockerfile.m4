@@ -23,7 +23,7 @@ RUN set -ex; \
     LDFLAGS="-Wl,-R/usr/local/lib:$OPENSSL_DIR/lib" \
     ./configure \
         --with-ssl=$OPENSSL_DIR \
-        ifelse(ARCH, `i386', `--host=i686-pc-linux-gnu CFLAGS=-m32'); \
+        m4_ifelse(ARCH, `i386', `--host=i686-pc-linux-gnu CFLAGS=-m32'); \
     make -j "$(nproc)"; \
     make install; \
     cd ..; \
