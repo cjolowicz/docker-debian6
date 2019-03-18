@@ -1,6 +1,6 @@
 all: build
 
-build: Dockerfile.m4 *.m4
+build: Dockerfile.m4
 	m4 -P -D ARCH=$(ARCH) Dockerfile.m4 | docker build -f - -t $(IMAGE) .
 
 tag: build
