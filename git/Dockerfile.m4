@@ -22,10 +22,11 @@ RUN set -ex; \
     cd git-$GIT_VERSION; \
     ./configure \
         --with-openssl=$OPENSSL_DIR \
-        --with-curl=/usr/local; \
+        --with-curl=/usr/local \
+    ; \
     make -j "$(nproc)"; \
     make install; \
-    cd .. ; \
+    cd ..; \
     rm -rf git-$GIT_VERSION; \
     git --version
 
