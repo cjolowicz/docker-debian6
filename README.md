@@ -5,14 +5,14 @@
 This repository provides Docker images for Debian 6 (squeeze) with
 selected tools built against OpenSSL 1.1.1b.
 
-- [cjolowicz/openssl-debian6-x86_64:1.1.1b](https://hub.docker.com/r/cjolowicz/openssl-debian6-x86_64)
-- [cjolowicz/openssl-debian6-i386:1.1.1b](https://hub.docker.com/r/cjolowicz/openssl-debian6-i386)
-- [cjolowicz/curl-debian6-x86_64:7.64.0](https://hub.docker.com/r/cjolowicz/curl-debian6-x86_64)
-- [cjolowicz/curl-debian6-i386:7.64.0](https://hub.docker.com/r/cjolowicz/curl-debian6-i386)
-- [cjolowicz/git-debian6-x86_64:2.21.0](https://hub.docker.com/r/cjolowicz/git-debian6-x86_64)
-- [cjolowicz/git-debian6-i386:2.21.0](https://hub.docker.com/r/cjolowicz/git-debian6-i386)
-- [cjolowicz/python-debian6-x86_64:3.6.8](https://hub.docker.com/r/cjolowicz/python-debian6-x86_64)
-- [cjolowicz/python-debian6-i386:3.6.8](https://hub.docker.com/r/cjolowicz/python-debian6-i386)
+- [openssl-debian6-x86_64:1.1.1b](https://hub.docker.com/r/cjolowicz/openssl-debian6-x86_64)
+- [openssl-debian6-i386:1.1.1b](https://hub.docker.com/r/cjolowicz/openssl-debian6-i386)
+- [curl-debian6-x86_64:7.64.0](https://hub.docker.com/r/cjolowicz/curl-debian6-x86_64)
+- [curl-debian6-i386:7.64.0](https://hub.docker.com/r/cjolowicz/curl-debian6-i386)
+- [git-debian6-x86_64:2.21.0](https://hub.docker.com/r/cjolowicz/git-debian6-x86_64)
+- [git-debian6-i386:2.21.0](https://hub.docker.com/r/cjolowicz/git-debian6-i386)
+- [python-debian6-x86_64:3.6.8](https://hub.docker.com/r/cjolowicz/python-debian6-x86_64)
+- [python-debian6-i386:3.6.8](https://hub.docker.com/r/cjolowicz/python-debian6-i386)
 
 The Docker images derive from the following base images:
 
