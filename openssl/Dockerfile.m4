@@ -38,7 +38,7 @@ RUN set -ex; \
         enable-egd ; \
     make -j "$(nproc)"; \
     make install_sw; \
-    cd .. ; \
+    cd ..; \
     rm -rf openssl-$OPENSSL_VERSION; \
     echo $OPENSSL_DIR/lib > /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf; \
     ldconfig -v; \
