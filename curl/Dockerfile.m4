@@ -2,7 +2,7 @@
 # Docker Image for curl 7.64.0 on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/openssl-debian6-ARCH:1.1.1b
+FROM REPO/openssl-debian6-ARCH:1.1.1b
 
 RUN set -ex; \
     apt-get update; \

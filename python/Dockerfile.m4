@@ -2,7 +2,7 @@
 # Docker Image for Python 3.6.8 on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/curl-debian6-ARCH:7.64.0
+FROM REPO/curl-debian6-ARCH:7.64.0
 
 RUN set -ex; \
     apt-get update; \

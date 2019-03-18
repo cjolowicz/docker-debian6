@@ -2,7 +2,7 @@
 # Docker Image for OpenSSL 1.1.1b on Debian 6 (squeeze)
 #
 
-FROM cjolowicz/debian-ARCH:squeeze
+FROM REPO/debian-ARCH:squeeze
 
 RUN set -ex; \
     apt-get update; \
