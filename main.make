@@ -17,4 +17,4 @@ push: tag
 	    docker push $(IMAGE):$$tag ; \
 	done
 
-.PHONY: all build tag push login
+.PHONY: all build tag push
