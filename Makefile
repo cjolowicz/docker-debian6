@@ -1,7 +1,7 @@
 DIRS = debian openssl curl python git
 ARCHS = x86_64 i386
 
-all: build
+all: build tag
 
 build:
 	set -ex; \
