@@ -26,3 +26,8 @@ release can still be obtained from archive.debian.org, its packages
 lack support for TLS >= 1.2. Following the widespread enforcement of
 this protocol, programs included in the release are often unable to
 establish connections to the outside world.
+
+## Usage
+
+Invoke `make` to build the images locally. This requires the
+[m4](https://www.gnu.org/software/m4/) preprocessor.
