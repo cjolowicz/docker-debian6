@@ -7,7 +7,7 @@ build:
 	set -ex; \
 	for dir in $(DIRS) ; do \
 	    for arch in $(ARCHS) ; do \
-	        $(MAKE) -C $$dir ARCH=$$arch build ; \
+	        $(MAKE) -C $$dir ARCH=$$arch REPO=$(DOCKER_USERNAME) build ; \
 	    done ; \
 	done
 
@@ -15,7 +15,7 @@ tag:
 	set -ex; \
 	for dir in $(DIRS) ; do \
 	    for arch in $(ARCHS) ; do \
-	        $(MAKE) -C $$dir ARCH=$$arch tag ; \
+	        $(MAKE) -C $$dir ARCH=$$arch REPO=$(DOCKER_USERNAME) tag ; \
 	    done ; \
 	done
 
@@ -23,7 +23,7 @@ push:
 	set -ex; \
 	for dir in $(DIRS) ; do \
 	    for arch in $(ARCHS) ; do \
-	        $(MAKE) -C $$dir ARCH=$$arch push ; \
+	        $(MAKE) -C $$dir ARCH=$$arch REPO=$(DOCKER_USERNAME) push ; \
 	    done ; \
 	done
 

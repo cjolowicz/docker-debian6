@@ -1,4 +1,4 @@
-IMAGE = $(DOCKER_USERNAME)/debian-$(ARCH)
+IMAGE = $(REPO)/debian-$(ARCH)
 TAGS = squeeze
 
 include ../main.make
